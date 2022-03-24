@@ -1,8 +1,28 @@
+const input = document.querySelector('input');
+
+
+// El monitor de los martes me ayudo con este mecanismo de importar archivos
+console.log(input)
+input.addEventListener('input', e => {
+  let file = e.target.files[0];
+  const soundFile = new p5.SoundFile(file);
+  misSonidos.push(soundFile)
+})
+
+function createObjectURL(file) {
+  if (window.webkitURL) {
+    return window.webkitURL.createObjectURL(file);
+  } else if (window.URL && window.URL.createObjectURL) {
+    return window.URL.createObjectURL(file);
+  } else {
+    return null;
+  }
+}
+
 let pantalla1;
 let cancion1;
 let misSonidos = [];
 let currentSoundIndex = 0;
-
 
 function setup() {
   createCanvas(1280, 720);
@@ -16,28 +36,28 @@ function preload(){
   cancion1 = loadImage("imagenes/2.png");
   cancion1 = loadImage("imagenes/3.png");
 
-  /*soundFormats('mp3', 'ogg');
+  soundFormats('mp3');
   misSonidos = [
-    loadSound('./sounds/1.mp3'),
-    loadSound('./sounds/2.mp3'),
-    loadSound('./sounds/3.mp3'),
-    
-  ];*/
+    loadSound('./canciones/1.mp3'),
+    loadSound('./canciones/2.mp3'),
+    loadSound('./canciones/3.mp3'),
+  ];
 }
-/*
+
+
 function keyPressed() {
   switch (keyCode) {
-    case 1:
+    case 39:
       //arrow right
-      jumpSong('next');
+      cambiar('next');
     misSonidos[currentSoundIndex].play();
       break;
-    case 2:
+    case 37:
       //arrow left
-      jumpSong('prev');
+      cambiar('prev');
     misSonidos[currentSoundIndex].play();
       break;
-    case 3:
+    case 32:
       //space bar
       if (misSonidos[currentSoundIndex].isPlaying()) {
       misSonidos[currentSoundIndex].pause();
@@ -51,11 +71,12 @@ function keyPressed() {
       //r key
     misSonidos[currentSoundIndex].jump(25);
       break;
-
+    }
 }
-}*/
-/*
-function cambiar(){
+
+/////////
+
+function cambiar(mode){
   console.log(currentSoundIndex);
   let jumper = 1;
   let verify = false;
@@ -76,7 +97,6 @@ function cambiar(){
     currentSoundIndex = 0;
   }
 }
-*/
 
 function draw() {
   background(220);
