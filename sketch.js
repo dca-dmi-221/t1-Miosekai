@@ -1,6 +1,5 @@
 const input = document.querySelector('input');
 
-
 // El monitor de los martes me ayudo con este mecanismo de importar archivos
 console.log(input)
 input.addEventListener('input', e => {
@@ -31,12 +30,16 @@ function setup() {
   createCanvas(1280, 720);
   imageMode(CENTER);
   vol = createSlider(0, 100, 30, 10);
-  vol.position(100,360);
+  vol.position(100, 360);
 
-  listaImagineDragons.agregarCancion("Enemy", "Imagine Dragons", cancion4, sonido4,sonido4.duration());
-  listaImagineDragons.agregarCancion("Enemy", "Imagine Dragons", cancion4, sonido4,sonido4.duration());
-  listaImagineDragons.agregarCancion("Enemy", "Imagine Dragons", cancion4, sonido4,sonido4.duration());
-  console.log({listaImagineDragons});
+  listaImagineDragons.agregarCancion("Enemy", "Imagine Dragons", cancion4, sonido4, sonido4.duration());
+  listaImagineDragons.agregarCancion("Beliver", "Imagine Dragons", cancion4, sonido11, sonido11.duration());
+  listaImagineDragons.agregarCancion("Warriors", "Imagine Dragons", cancion4, sonido12, sonido12.duration());
+  listaImagineDragons.agregarCancion("Whatever it Takes", "Imagine Dragons", cancion4, sonido13, sonido13.duration());
+  listaImagineDragons.agregarCancion("Love", "Imagine Dragons", cancion4, sonido14, sonido14.duration());
+  console.log({
+    listaImagineDragons
+  });
 }
 
 
@@ -46,12 +49,20 @@ function preload() {
   cancion2 = loadImage("imagenes/2.png");
   cancion3 = loadImage("imagenes/3.png");
   cancion4 = loadImage("imagenes/4.png");
-  /*cancion5 = loadImage("imagenes/5.png");
+  cancion5 = loadImage("imagenes/5.png");
   cancion6 = loadImage("imagenes/6.png");
-  cancion7 = loadImage("imagenes/7.png");*/
+  cancion7 = loadImage("imagenes/7.png");
   cancion8 = loadImage("imagenes/8.png");
-  /*cancion9 = loadImage("imagenes/9.png");
-  cancion10 = loadImage("imagenes/10.png"); */
+  cancion9 = loadImage("imagenes/9.png");
+  cancion10 = loadImage("imagenes/10.png");
+  cancion11 = loadImage("imagenes/11.png");
+  cancion12 = loadImage("imagenes/12.png");
+  cancion13 = loadImage("imagenes/13.png");
+  cancion14 = loadImage("imagenes/14.png");
+  cancion15 = loadImage("imagenes/15.png");
+  cancion16 = loadImage("imagenes/16.png");
+  cancion17 = loadImage("imagenes/17.png");
+
 
   soundFormats('mp3');
   misSonidos = [
@@ -59,12 +70,19 @@ function preload() {
     sonido2 = loadSound('./canciones/2.mp3'),
     sonido3 = loadSound('./canciones/3.mp3'),
     sonido4 = loadSound('./canciones/4.mp3'),
-   /* sonido5 = loadSound('./canciones/5.mp3'),
+    sonido5 = loadSound('./canciones/5.mp3'),
     sonido6 = loadSound('./canciones/6.mp3'),
-    sonido7 = loadSound('./canciones/7.mp3'),*/
+    sonido7 = loadSound('./canciones/7.mp3'),
     sonido8 = loadSound('./canciones/8.mp3'),
-    /*sonido9 = loadSound('./canciones/9.mp3'),
-    sonido10 = loadSound('./canciones/10.mp3'),*/
+    sonido9 = loadSound('./canciones/9.mp3'),
+    sonido10 = loadSound('./canciones/10.mp3'),
+    sonido11 = loadSound('./canciones/11.mp3'),
+    sonido12 = loadSound('./canciones/12.mp3'),
+    sonido13 = loadSound('./canciones/13.mp3'),
+    sonido14 = loadSound('./canciones/14.mp3'),
+    sonido15 = loadSound('./canciones/15.mp3'),
+    sonido16 = loadSound('./canciones/16.mp3'),
+    sonido17 = loadSound('./canciones/17.mp3'),
   ];
 }
 
@@ -124,30 +142,29 @@ function cambiar(mode) {
 function draw() {
   background(220);
   //image(pantalla1, width / 2, height / 2, width, height);
-  
+
   rect(800, 400, 60, 60);
   rect(15, 400, 60, 60);
-  
-    misSonidos[currentSoundIndex].setVolume(vol.value()/100);
-    fill(0);
-    listaImagineDragons.canciones.forEach((element,index) => {
-      //console.log(element);
-      text(element.nombre, 50,50)
-      text(element.artista, 50,70)
-      image(element.imagen,50,100,50,50);
-      text(element.duracion,50,150);
-    });
-    //console.log(vol.value())
 
-    
+  misSonidos[currentSoundIndex].setVolume(vol.value() / 100);
+  fill(0);
+  listaImagineDragons.canciones.forEach((element, index) => {
+    //console.log(element);
+    text(element.nombre, 50, 50 + (index * 120))
+    text(element.artista, 50, 70 + (index * 120))
+    image(element.imagen, 50, 100 + (index * 120), 50, 50);
+    text(element.duracion, 50, 150 + (index * 120));
+  });
+  //console.log(vol.value())
+
+
 }
 
 
 /* new Cancion("Future Nostalgia", "Dua Lipa", cancion1, sonido1,),
             new Cancion("You Right", "Doja cat", cancion2, sonido2,),
             new Cancion("Unlock it", "Charli XCX", cancion3, sonido3,),
-            new Cancion(),
-            new Cancion("Enemy", "Imagine Dragons", cancion5, sonido5,),
+            new Cancion("Enemy", "Imagine Dragons", cancion4, sonido4,),
             new Cancion("Enemy", "Imagine Dragons", cancion6, sonido6,),
             new Cancion("Enemy", "Imagine Dragons", cancion7, sonido7,),
             new Cancion("Enemy", "Imagine Dragons", cancion8, sonido8,),

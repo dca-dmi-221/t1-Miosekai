@@ -6,6 +6,7 @@ class Cancion {
         imagen, 
         archivo, 
         duracion,
+        seleccionado,
         
     ) {
 
@@ -14,6 +15,17 @@ class Cancion {
         this.imagen = imagen;
         this.archivo = archivo;
         this.duracion = duracion;
+        this.seleccionado = seleccionado;
 
     }
+
+
+/*get imagen(){
+return this.imagen;
+
+}
+
+set esSeleccionado(val){
+return this.esSeleccionado = val;
+}*/
 }
