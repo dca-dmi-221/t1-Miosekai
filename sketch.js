@@ -106,7 +106,7 @@ const SONGS_DATA = [{
 
 const LIST_DATA = [{
   name: "Imagine Dragons PlayList",
-  image: "imagenes/list1.jpg",
+  image: "imagenes/imagine.jpg",
   songs: [{
     name: "Enemy",
     artist: "Imagine Dragons",
@@ -139,8 +139,8 @@ const LIST_DATA = [{
   ]
 
 },{
-  name: "Random PlayList",
-  image: "imagenes/list2.jpg",
+  name: "Segunda PlayList",
+  image: "imagenes/segunda.jpg",
   songs: [{
 
     name: "Future Nostalgia",
@@ -266,9 +266,8 @@ function createObjectURL(file) {
 }*/
 
 let pantalla1;
-let vol;
-//let cancion1;
-let misSonidos = [];
+//let vol;
+//let misSonidos = [];
 const listFiles = [];
 const songsFiles = [];
 let app;
@@ -277,12 +276,12 @@ let currentSoundIndex = 0;
 
 function setup() {
 
-  createCanvas(1280, 720 + (30 * songsFiles.length));
+  createCanvas(1280, 336 + (60 * songsFiles.length));
   app = new App(this);
+
   console.log(listFiles);
-  //imageMode(CENTER);
-  vol = createSlider(0, 100, 30, 10);
-  vol.position(100, 360);
+ /* vol = createSlider(0, 100, 30, 10);
+  vol.position(100, 360);*/
 
  /* listaImagineDragons.agregarCancion("Enemy", "Imagine Dragons", cancion4, sonido4, sonido4.duration());
   listaImagineDragons.agregarCancion("Beliver", "Imagine Dragons", cancion4, sonido11, sonido11.duration());
@@ -297,28 +296,10 @@ function setup() {
 
 
 function preload() {
-  pantalla1 = loadImage("imagenes/pantalla 1.png");
- /*cancion1 = loadImage("imagenes/1.png");
-  cancion2 = loadImage("imagenes/2.png");
-  cancion3 = loadImage("imagenes/3.png");
-  cancion4 = loadImage("imagenes/4.png");
-  cancion5 = loadImage("imagenes/5.png");
-  cancion6 = loadImage("imagenes/6.png");
-  cancion7 = loadImage("imagenes/7.png");
-  cancion8 = loadImage("imagenes/8.png");
-  cancion9 = loadImage("imagenes/9.png");
-  cancion10 = loadImage("imagenes/10.png");
-  cancion11 = loadImage("imagenes/11.png");
-  cancion12 = loadImage("imagenes/12.png");
-  cancion13 = loadImage("imagenes/13.png");
-  cancion14 = loadImage("imagenes/14.png");
-  cancion15 = loadImage("imagenes/15.png");
-  cancion16 = loadImage("imagenes/16.png");
-  cancion17 = loadImage("imagenes/17.png");*/
-
+  pantalla1 = loadImage("imagenes/fondo.png");
 
   soundFormats('mp3');
-  misSonidos = [
+ /* misSonidos = [
     sonido1 = loadSound('./canciones/1.mp3'),
     sonido2 = loadSound('./canciones/2.mp3'),
     sonido3 = loadSound('./canciones/3.mp3'),
@@ -336,7 +317,7 @@ function preload() {
     sonido15 = loadSound('./canciones/15.mp3'),
     sonido16 = loadSound('./canciones/16.mp3'),
     sonido17 = loadSound('./canciones/17.mp3'),
-  ]; 
+  ]; */
 
 
   SONGS_DATA.forEach(({ file, cover, name, artist }) => {
@@ -364,6 +345,7 @@ function preload() {
   })
 
 }
+
 /*
 function keyPressed() {
   switch (keyCode) {
@@ -421,28 +403,16 @@ function cambiar(mode) {
 */
 function draw() {
   background(51);
-  
-  //image(pantalla1, width / 2, height / 2, width, height);
-
-  /*rect(800, 400, 60, 60);
-  rect(15, 400, 60, 60); */
-
-  misSonidos[currentSoundIndex].setVolume(vol.value() / 100);
+  image(pantalla1,0,0);
+    //misSonidos[currentSoundIndex].setVolume(vol.value() / 100);
   fill(0);
-  /*listaImagineDragons.canciones.forEach((element, index) => {
-    //console.log(element);
-    text(element.nombre, 50, 50 + (index * 120))
-    text(element.artista, 50, 70 + (index * 120))
-    image(element.imagen, 50, 100 + (index * 120), 50, 50);
-    text(element.duracion, 50, 150 + (index * 120));
-  });*/
-  //console.log(vol.value())
-
   app.draw();
 }
 
 function mouseClicked() {
   app.click();
+  app.onSubmitList();
+  app.onSubmitSong();
 }
 
 function mousePressed() {

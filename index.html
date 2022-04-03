@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <input type="file" accept=".mp3">
-  <script src="./lib/p5.js"></script>
-  <script src="./lib/p5Sound.js"></script>
-  <script src="sketch.js"></script>
-  <script src="Song.js"></script>
-  <script src="List.js"></script>
-  <script src="App.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sketch</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body style="font-family: Poppins">
+    <script src="sketch.js"></script>
+    <script src="Song.js"></script>
+    <script src="List.js"></script>
+    <script src="app.js"></script>
+    
+    <form id="modal_list" >
+      <p>Nombre</p>
+      <input type="text" name="list_name" id="list_name">
+      <p>Cover</p>
+      <input type="file" name="list_cover" id="list_cover">
+      <button type="submit">Crear</button>
+    </form>
+
+    <form id="modal_song" style="position: absolute;">
+      <p>Nombre</p>
+      <input type="text" id="song_name" name="song_name">
+      <p>Artista</p>
+      <input type="text" id="song_artist" name="song_artist">
+      <p>Cover</p>
+      <input type="file" name="song_cover" id="song_cover">
+      <p>Song</p>
+      <input type="file" name="song_song" id="song_song" style="width: 100px;">
+
+      <button type="submit">Crear</button>
+    </form>
+
+  </body>
 </html>
 
