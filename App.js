@@ -18,7 +18,7 @@ class App {
     this.modal.style = `position: absolute; width: 100%; height: 100%; left : ${this._list.length * 300 + 200}px; top: 50px; margin:0; color: white`
 
     this.modalSong = document.getElementById("modal_song");
-    this.modalSong.style = `position: absolute; width: 100%; height: 100%;  top: 250px; margin:0; margin-left: 30px;`
+    this.modalSong.style = `position: absolute; width: 100%; height: 100%;  top: 250px; margin:0; margin-left: 30px; color: white`
 
 
     noStroke();
@@ -52,22 +52,10 @@ class App {
     const currIndex = this._currentSong;
     const currSong = this._songs[currIndex];
     if (currIndex === null) {
-    /*   fill(125);
-      rect(20, 235, width - 40, 4, 2);
-      rect(20, 190, 100, 12, 6);
-      rect(20, 215, 70, 8, 4);
-      //pausa central, la del display song a la derecha, sin una canción seleccionada
-      ellipse(907, 645, 50, 50);
-      fill(51);
-      
-      triangle(895, 663, 895, 625, 927, 641);
-
-      fill(125); */
-
       ellipse(907, 645, 50, 50);
     } else {
       image(currSong.cover, 835, 330, 260, 260);
-      this._displayGradient(835, 330, 260, 260, color(51, 0.5), color(51));
+      
 
       fill(255);
 
@@ -108,7 +96,11 @@ class App {
       list.click(index);
       if (list.isSelected) {
         this._songs = [];
-        this._currentSong = null;
+        
+        if(this._currentList){
+          
+        }
+        
         
         this._currentList = list;
         console.log(this._currentList);
@@ -179,19 +171,6 @@ class App {
     if (this._dragging && this._currentSong !== null) this._dragging = false;
   }
 
-  _displayGradient(x, y, w, h, c1, c2) {
-    noFill();
-    strokeWeight(2);
-
-    for (let i = y; i <= y + h; i++) {
-      let inter = map(i, y, y + h, 0, 1);
-      let c = lerpColor(c1, c2, inter);
-      stroke(c);
-      line(x, i, x + w, i);
-    }
-    noStroke();
-
-  }
 
   _displayTimeCurrentSong(){
     const currIndex = this._currentSong;
@@ -199,6 +178,7 @@ class App {
 
     textStyle(NORMAL);
     if(currSong){
+      fill(255);
       
       text(currSong.getTimestamp(), 690, 710);
       textAlign(RIGHT);
@@ -278,7 +258,7 @@ class App {
       let fileReader = new FileReader();
       fileReader.onload = e => {
         e.preventDefault();
-        var dataFile = fileReader.result;  
+        let dataFile = fileReader.result;  
         songCover = dataFile;
         songCover = this._app.loadImage(songCover);
 
