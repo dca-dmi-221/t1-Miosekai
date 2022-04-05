@@ -2,7 +2,7 @@ const SONGS_DATA = [{
 
   name: "Future Nostalgia",
   artist: "Dua Lipa",
-  cover: "imagenes/1.png",
+  cover: "./imagenes/1.png",
   file: './canciones/1.mp3'
 
   
@@ -11,21 +11,21 @@ const SONGS_DATA = [{
 {
   name: "You Right",
   artist: "Doja Cat y The Weeknd",
-  cover: "imagenes/2.png",
+  cover: "./imagenes/2.png",
   file: './canciones/2.mp3'
 },
 
 {
   name: "Unlock it",
   artist: "Charlie XCX",
-  cover: "imagenes/3.png",
+  cover: "./imagenes/3.png",
   file: './canciones/3.mp3'
 },
 
 {
   name: "Enemy",
   artist: "Imagine Dragon",
-  cover: "imagenes/4.png",
+  cover: "./imagenes/4.png",
   file: './canciones/4.mp3'
 },
 
@@ -34,7 +34,7 @@ const SONGS_DATA = [{
 
   name: "Sweetest Pie",
   artist: "Dua Lipa, Megan Thee Stallion",
-  cover: "imagenes/5.png",
+  cover: "./imagenes/5.png",
   file: './canciones/5.mp3'
 },
 
@@ -42,7 +42,7 @@ const SONGS_DATA = [{
 
   name: "Jenny - Hearteye Speed Mix",
   artist: "Studio Killers",
-  cover: "imagenes/6.png",
+  cover: "./imagenes/6.png",
   file: './canciones/6.mp3'
 },
 
@@ -50,7 +50,7 @@ const SONGS_DATA = [{
 
   name: "Rose",
   artist: "Nana by Anna Tsuchiya ",
-  cover: "imagenes/7.png",
+  cover: "./imagenes/7.png",
   file: './canciones/7.mp3'
 },
 
@@ -58,7 +58,7 @@ const SONGS_DATA = [{
 
   name: "Dalla Dalla",
   artist: "ITZY",
-  cover: "imagenes/8.png",
+  cover: "./imagenes/8.png",
   file: './canciones/8.mp3'
 },
 
@@ -66,7 +66,7 @@ const SONGS_DATA = [{
 
   name: "I’m Not Okay (I Promise)",
   artist: "My Chemical Romance",
-  cover: "imagenes/9.png",
+  cover: "./imagenes/9.png",
   file: './canciones/9.mp3'
 },
 
@@ -74,7 +74,7 @@ const SONGS_DATA = [{
 
   name: "Love Again",
   artist: "Dua Lipa",
-  cover: "imagenes/10.png",
+  cover: "./imagenes/10.png",
   file: './canciones/10.mp3'
 },
 
@@ -82,7 +82,7 @@ const SONGS_DATA = [{
 
   name: "Heart Of Glass",
   artist: "Miley Cyrus",
-  cover: "imagenes/15.png",
+  cover: "./imagenes/15.png",
   file: './canciones/15.mp3'
 },
 
@@ -90,7 +90,7 @@ const SONGS_DATA = [{
 
   name: "Hot",
   artist: "Avril Lavigne",
-  cover: "imagenes/16.png",
+  cover: "./imagenes/16.png",
   file: './canciones/16.mp3'
 },
 
@@ -98,7 +98,7 @@ const SONGS_DATA = [{
 
   name: "Take On Me",
   artist: "a-ha",
-  cover: "imagenes/17.png",
+  cover: "./imagenes/17.png",
   file: './canciones/17.mp3'
 },
 
@@ -106,33 +106,33 @@ const SONGS_DATA = [{
 
 const LIST_DATA = [{
   name: "Imagine Dragons PlayList",
-  image: "imagenes/imagine.jpg",
+  image: "./imagenes/imagine.jpeg",
   songs: [{
     name: "Enemy",
     artist: "Imagine Dragons",
-    cover: "imagenes/4.png",
+    cover: "./imagenes/4.png",
     file: './canciones/4.mp3'
   }, {
     name: "Believer",
     artist: "Imagine Dragons",
-    cover: "imagenes/11.png",
+    cover: "./imagenes/11.png",
     file: './canciones/11.mp3'
   }, {
     name: "Warriors",
     artist: "Imagine Dragons",
-    cover: "imagenes/12.png",
+    cover: "./imagenes/12.png",
     file: './canciones/12.mp3'
   },
   {
     name: "Whatever It Takes",
     artist: "Imagine Dragons",
-    cover: "imagenes/13.png",
+    cover: "./imagenes/13.png",
     file: './canciones/13.mp3'
   },
   {
     name: "Love",
     artist: "Imagine Dragons",
-    cover: "imagenes/14.png",
+    cover: "./imagenes/14.png",
     file: './canciones/14.mp3'
   }
 
@@ -140,12 +140,12 @@ const LIST_DATA = [{
 
 },{
   name: "Segunda PlayList",
-  image: "imagenes/segunda.jpg",
+  image: "./imagenes/segunda.png",
   songs: [{
 
     name: "Future Nostalgia",
     artist: "Dua Lipa",
-    cover: "imagenes/1.png",
+    cover: "./imagenes/1.png",
     file: './canciones/1.mp3'
   
   
@@ -154,21 +154,21 @@ const LIST_DATA = [{
   {
     name: "You Right",
     artist: "Doja Cat y The Weeknd",
-    cover: "imagenes/2.png",
+    cover: "./imagenes/2.png",
     file: './canciones/2.mp3'
   },
   
   {
     name: "Unlock it",
     artist: "Charlie XCX",
-    cover: "imagenes/3.png",
+    cover: "./imagenes/3.png",
     file: './canciones/3.mp3'
   },
   
   {
     name: "Enemy",
     artist: "Imagine Dragon",
-    cover: "imagenes/4.png",
+    cover: "./imagenes/4.png",
     file: './canciones/4.mp3'
   },
   
@@ -177,7 +177,7 @@ const LIST_DATA = [{
   
     name: "Sweetest Pie",
     artist: "Dua Lipa, Megan Thee Stallion",
-    cover: "imagenes/5.png",
+    cover: "./imagenes/5.png",
     file: './canciones/5.mp3'
   },
   
@@ -185,7 +185,7 @@ const LIST_DATA = [{
   
     name: "Jenny - Hearteye Speed Mix",
     artist: "Studio Killers",
-    cover: "imagenes/6.png",
+    cover: "./imagenes/6.png",
     file: './canciones/6.mp3'
   },
   
@@ -193,7 +193,7 @@ const LIST_DATA = [{
   
     name: "Rose",
     artist: "Nana by Anna Tsuchiya ",
-    cover: "imagenes/7.png",
+    cover: "./imagenes/7.png",
     file: './canciones/7.mp3'
   },
   
@@ -201,7 +201,7 @@ const LIST_DATA = [{
   
     name: "Dalla Dalla",
     artist: "ITZY",
-    cover: "imagenes/8.png",
+    cover: "./imagenes/8.png",
     file: './canciones/8.mp3'
   },
   
@@ -209,7 +209,7 @@ const LIST_DATA = [{
   
     name: "I’m Not Okay (I Promise)",
     artist: "My Chemical Romance",
-    cover: "imagenes/9.png",
+    cover: "./imagenes/9.png",
     file: './canciones/9.mp3'
   },
   
@@ -217,7 +217,7 @@ const LIST_DATA = [{
   
     name: "Love Again",
     artist: "Dua Lipa",
-    cover: "imagenes/10.png",
+    cover: "./imagenes/10.png",
     file: './canciones/10.mp3'
   },
   
@@ -225,7 +225,7 @@ const LIST_DATA = [{
   
     name: "Heart Of Glass",
     artist: "Miley Cyrus",
-    cover: "imagenes/15.png",
+    cover: "./imagenes/15.png",
     file: './canciones/15.mp3'
   },
   
@@ -233,7 +233,7 @@ const LIST_DATA = [{
   
     name: "Hot",
     artist: "Avril Lavigne",
-    cover: "imagenes/16.png",
+    cover: "./imagenes/16.png",
     file: './canciones/16.mp3'
   },
   
@@ -241,7 +241,7 @@ const LIST_DATA = [{
   
     name: "Take On Me",
     artist: "a-ha",
-    cover: "imagenes/17.png",
+    cover: "./imagenes/17.png",
     file: './canciones/17.mp3'
   },]
 }]
@@ -296,7 +296,7 @@ function setup() {
 
 
 function preload() {
-  pantalla1 = loadImage("imagenes/fondo.png");
+  pantalla1 = loadImage("./imagenes/fondo.png");
 
   soundFormats('mp3');
  /* misSonidos = [
@@ -402,10 +402,10 @@ function cambiar(mode) {
 }
 */
 function draw() {
-  background(51);
-  image(pantalla1,0,0);
+  background(51); // cambio fondo
+  image(pantalla1,0,0); 
     //misSonidos[currentSoundIndex].setVolume(vol.value() / 100);
-  fill(0);
+  /*fill(128, 0, 128)	;*/
   app.draw();
 }
 

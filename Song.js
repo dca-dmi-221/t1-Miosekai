@@ -15,6 +15,7 @@ class Song {
 
   }
 
+  //// +display(i: Any, j:Any): void
   display(i, j) {
     const offY = 60 * i;
     const offX = this._width * j+250;

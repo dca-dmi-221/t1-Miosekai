@@ -33,9 +33,7 @@ class List {
             this._app.rect(offX,30, this._width, this._height);
         }
 
-/*         this._songItems.forEach((song, index) => {
-            song.display(index, i);
-        }) */
+
     }
 
     click(i){
