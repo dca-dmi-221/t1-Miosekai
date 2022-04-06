@@ -106,7 +106,7 @@ const SONGS_DATA = [{
 
 const LIST_DATA = [{
   name: "Imagine Dragons PlayList",
-  image: "./imagenes/imagine.jpeg",
+  image: "./imagenes/punto.jpg",
   songs: [{
     name: "Enemy",
     artist: "Imagine Dragons",
@@ -140,7 +140,7 @@ const LIST_DATA = [{
 
 },{
   name: "Segunda PlayList",
-  image: "./imagenes/segunda.png",
+  image: "./imagenes/segunda.jpg",
   songs: [{
 
     name: "Future Nostalgia",

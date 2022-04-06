@@ -20,7 +20,9 @@ class App {
     this.modalSong = document.getElementById("modal_song");
     this.modalSong.style = `position: absolute; width: 100%; height: 100%;  top: 250px; margin:0; margin-left: 30px; color: white`
 
-
+    this.slider = createSlider(0,10);
+    this.slider.position(710,310);
+    this.slider.style('width','80px');
     noStroke();
     textSize(16);
   }
@@ -86,7 +88,9 @@ class App {
     triangle(862, 625, 862, 660, 840, 642);
     rect(828, 625, 10, 30);
 
-    text(mouseX + " " + mouseY, mouseX, mouseY);
+    //text(mouseX + " " + mouseY, mouseX, mouseY);
+
+    this._sliderVolume();
   }
 
   click() {
@@ -165,6 +169,8 @@ class App {
       const currSong = this._songs[this._currentSong];
       if (this._dragging) currSong.song.jump(map(mouseX, 550, 1240, 0, currSong.song.duration()));
     }
+
+    this._handleSliderVolume();
   }
 
   release() {
@@ -199,6 +205,18 @@ class App {
       }
     }
 
+  }
+
+
+
+  _handleSliderVolume(){
+
+
+    if(this._currentSong){
+      this._currentSong.song.setVolume(this._sliderVolume/10);
+      }
+    
+    
   }
 
   onSubmitList() {
