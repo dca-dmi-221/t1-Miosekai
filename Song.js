@@ -56,6 +56,10 @@ class Song {
     return this._song.currentTime() / this._song.duration();
   }
 
+  setVolumeSong(val){
+    this._song.setVolume(val);
+  }
+
   getTimestamp() {
     const time = this._song.currentTime();
     const min = Math.floor(time / 60);

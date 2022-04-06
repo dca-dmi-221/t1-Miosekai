@@ -20,7 +20,7 @@ class App {
     this.modalSong = document.getElementById("modal_song");
     this.modalSong.style = `position: absolute; width: 100%; height: 100%;  top: 250px; margin:0; margin-left: 30px; color: white`
 
-    this.slider = createSlider(0,10);
+    this.slider = createSlider(0,100,10,5);
     this.slider.position(710,310);
     this.slider.style('width','80px');
     noStroke();
@@ -89,8 +89,8 @@ class App {
     rect(828, 625, 10, 30);
 
     //text(mouseX + " " + mouseY, mouseX, mouseY);
-
-    this._sliderVolume();
+    this._handleSliderVolume();
+  
   }
 
   click() {
@@ -170,7 +170,7 @@ class App {
       if (this._dragging) currSong.song.jump(map(mouseX, 550, 1240, 0, currSong.song.duration()));
     }
 
-    this._handleSliderVolume();
+   
   }
 
   release() {
@@ -211,10 +211,14 @@ class App {
 
   _handleSliderVolume(){
 
-
-    if(this._currentSong){
-      this._currentSong.song.setVolume(this._sliderVolume/10);
+    const currIndex = this._currentSong;
+    if(currIndex!= null){      
+    const currSong = this._songs[currIndex];
+    currSong.setVolumeSong(this.slider.value()/100);
+    console.log(currSong);
       }
+
+     
     
     
   }
