@@ -1,13 +1,13 @@
-class Modal{
-    constructor(type){
+class Modal {
+    constructor(type) {
         this._type = type;
     }
 
-    display(){
+    display() {
         let div = document.createElement("div");
         div.className = "modal"
 
-        
+
         let inputName = document.createElement("input");
         inputName.type = "text";
 
@@ -19,7 +19,7 @@ class Modal{
 
         let inputSong = document.createElement("input");
         inputSong.type = "file";
-        switch(type){
+        switch (type) {
             case "list":
 
 

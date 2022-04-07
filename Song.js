@@ -1,5 +1,5 @@
 class Song {
-  constructor ({
+  constructor({
     name,
     artist,
     cover,
@@ -18,37 +18,37 @@ class Song {
   //// +display(i: Any, j:Any): void
   display(i, j) {
     const offY = 60 * i;
-    const offX = this._width * j+250;
-    
-    if(this.isMouseOver(i)) {
-      fill(35);
-      rect(250, 327.5 + offY, this._width , 60);
-    }
-    
+    const offX = this._width * j + 250;
 
-    image(this._cover,offX + 30, 335 + offY, 45, 45); 
+    if (this.isMouseOver(i)) {
+      fill(35);
+      rect(250, 327.5 + offY, this._width, 60);
+    }
+
+
+    image(this._cover, offX + 30, 335 + offY, 45, 45);
 
     stroke(255);
     strokeWeight(0.2);
     fill(255);
-    text(i,10 + offX,offY + 360);
+    text(i, 10 + offX, offY + 360);
     text(this._name, 77 + offX, 352 + offY);
     noStroke();
     text(this._artist, 77 + offX, 372 + offY);
 
-    if(this._song.isPlaying()) {
+    if (this._song.isPlaying()) {
       fill(190, 49, 49);
       rect(322 + offX, 347 + offY, 5, 20);
       rect(334 + offX, 347 + offY, 5, 20);
     } else {
-      if(this._isSelected) fill(190, 49, 49);
+      if (this._isSelected) fill(190, 49, 49);
       else fill(255);
       triangle(325 + offX, 347 + offY, 325 + offX, 367 + offY, 343 + offX, 357 + offY)
     }
   }
 
   toggleSong() {
-    if(this._song.isPlaying()) this._song.pause();
+    if (this._song.isPlaying()) this._song.pause();
     else this._song.play();
   }
 
@@ -56,7 +56,7 @@ class Song {
     return this._song.currentTime() / this._song.duration();
   }
 
-  setVolumeSong(val){
+  setVolumeSong(val) {
     this._song.setVolume(val);
   }
 
@@ -76,7 +76,7 @@ class Song {
 
   isMouseOver(i) {
     const offY = 60 * i;
-    return (mouseX > 300 && mouseX < this._width+300 && mouseY > 331 + offY && mouseY < 388 + offY);
+    return (mouseX > 300 && mouseX < this._width + 300 && mouseY > 331 + offY && mouseY < 388 + offY);
   }
 
   get cover() {
@@ -96,5 +96,5 @@ class Song {
   }
   set isSelected(val) {
     this._isSelected = val;
-  } 
+  }
 }

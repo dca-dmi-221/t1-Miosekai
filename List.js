@@ -23,22 +23,22 @@ class List {
 
         this._app.image(this._image, offX, 30, this._width, this._height);
         this._app.fill(56, 27, 84);
-        this._app.rect(offX,  this._height -70 , this._width, this._height/2);
+        this._app.rect(offX, this._height - 70, this._width, this._height / 2);
         this._app.fill(255);
         this._app.text(this._name, offX + 20, 200);
 
-        
+
         if (this.isMouseOver(i)) {
-            fill(35,35,35,150);
-            this._app.rect(offX,30, this._width, this._height);
+            fill(35, 35, 35, 150);
+            this._app.rect(offX, 30, this._width, this._height);
         }
 
 
     }
 
-    click(i){
-        
-        if(this.isMouseOver(i)){
+    click(i) {
+
+        if (this.isMouseOver(i)) {
             this._isSelected = true;
         } else {
             this.isSelected = false;
@@ -46,7 +46,7 @@ class List {
     }
 
     selectList() {
-        if(this._isSelected){
+        if (this._isSelected) {
             return this._songItems;
         }
     }
@@ -57,7 +57,7 @@ class List {
 
     isMouseOver(i) {
         const offX = 270 * i + 250;
-        return (mouseX > 0 + offX && mouseX < this._width + offX && mouseY > 30 && mouseY < this._height+50);
+        return (mouseX > 0 + offX && mouseX < this._width + offX && mouseY > 30 && mouseY < this._height + 50);
     }
 
     get isSelected() {
@@ -68,7 +68,7 @@ class List {
         this._isSelected = val;
     }
 
-    get name(){
+    get name() {
         return this._name;
     }
 
@@ -76,7 +76,7 @@ class List {
         this._name = val;
     }
 
-    get songItems(){
+    get songItems() {
         return this._songItems;
     }
 

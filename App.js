@@ -20,9 +20,9 @@ class App {
     this.modalSong = document.getElementById("modal_song");
     this.modalSong.style = `position: absolute; width: 100%; height: 100%;  top: 250px; margin:0; margin-left: 30px; color: white`
 
-    this.slider = createSlider(0,100,10,5);
-    this.slider.position(710,310);
-    this.slider.style('width','80px');
+    this.slider = createSlider(0, 100, 10, 5);
+    this.slider.position(710, 310);
+    this.slider.style('width', '80px');
     noStroke();
     textSize(16);
   }
@@ -37,8 +37,8 @@ class App {
     this._app.fill(56, 27, 84);
     this._app.rect(this._list.length * 270 + 250, 30, 320, 200);
     this._app.fill(255);
-    if(this._currentList){
-      this._app.text( this._currentList.name,  330, 303);
+    if (this._currentList) {
+      this._app.text(this._currentList.name, 330, 303);
     }
 
     if (this._songs.length > 0) {
@@ -53,28 +53,20 @@ class App {
   _displayCurrentSong() {
     const currIndex = this._currentSong;
     const currSong = this._songs[currIndex];
-    if (currIndex === null) {
-      ellipse(907, 645, 50, 50);
-    } else {
+    if (currIndex !== null) {
       image(currSong.cover, 835, 330, 260, 260);
-      
 
-      fill(255);
-
-      
-      fill(51);
 
       //pausa central, la del display song a la derecha, con una canción seleccionada la primerva vez
-      ellipse(907, 645, 50, 50);
-      fill(255);
-      
-      if (currSong.song.isPlaying()) {
-        rect(894, 633, 10, 30);
-        rect(910, 633, 10, 30);
+      fill(180, 100, 230);
 
-       
+      if (currSong.song.isPlaying()) {
+        rect(904, 633, 6, 20);
+        rect(913, 633, 6, 20);
+
+
       } else {
-        fill(190, 49, 49)
+        
         //triangulo pause
         triangle(895, 663, 895, 625, 927, 641);
       }
@@ -82,15 +74,15 @@ class App {
       fill(255);
     }
     // siguiente canción botones
-    triangle(960, 625, 960, 660, 982, 642);
-    rect(985, 625, 10, 30);
-    //anterior cnación botones
-    triangle(862, 625, 862, 660, 840, 642);
-    rect(828, 625, 10, 30);
+    triangle(960, 630, 960, 650, 972, 640);
+    rect(975, 630, 7, 20);
+    //anterior canción botones
+    triangle(852, 630, 852, 650, 840, 640);
+    rect(828, 630, 7, 20);
 
     //text(mouseX + " " + mouseY, mouseX, mouseY);
     this._handleSliderVolume();
-  
+
   }
 
   click() {
@@ -100,12 +92,12 @@ class App {
       list.click(index);
       if (list.isSelected) {
         this._songs = [];
-        
-        if(this._currentList){
-          
+
+        if (this._currentList) {
+
         }
-        
-        
+
+
         this._currentList = list;
         console.log(this._currentList);
         list.selectList().forEach(data => {
@@ -170,7 +162,7 @@ class App {
       if (this._dragging) currSong.song.jump(map(mouseX, 550, 1240, 0, currSong.song.duration()));
     }
 
-   
+
   }
 
   release() {
@@ -178,14 +170,14 @@ class App {
   }
 
 
-  _displayTimeCurrentSong(){
+  _displayTimeCurrentSong() {
     const currIndex = this._currentSong;
     const currSong = this._songs[currIndex];
 
     textStyle(NORMAL);
-    if(currSong){
+    if (currSong) {
       fill(255);
-      
+
       text(currSong.getTimestamp(), 690, 710);
       textAlign(RIGHT);
       text(currSong.getTotalTime(), 1240, 710);
@@ -209,18 +201,18 @@ class App {
 
 
 
-  _handleSliderVolume(){
+  _handleSliderVolume() {
 
     const currIndex = this._currentSong;
-    if(currIndex!= null){      
-    const currSong = this._songs[currIndex];
-    currSong.setVolumeSong(this.slider.value()/100);
-    console.log(currSong);
-      }
+    if (currIndex != null) {
+      const currSong = this._songs[currIndex];
+      currSong.setVolumeSong(this.slider.value() / 100);
+      console.log(currSong);
+    }
 
-     
-    
-    
+
+
+
   }
 
   onSubmitList() {
@@ -238,7 +230,7 @@ class App {
         let fileReader = new FileReader();
         fileReader.onload = e => {
           e.preventDefault();
-          var dataFile = fileReader.result; 
+          var dataFile = fileReader.result;
           listFile = dataFile;
           listFile = this._app.loadImage(listFile);
 
@@ -246,8 +238,8 @@ class App {
 
 
           allow = false;
-          if (this._list.some(list => listName === list.name )) {
-                
+          if (this._list.some(list => listName === list.name)) {
+
           } else {
             this._list.push(new List(listName, listFile, [], this._app))
           }
@@ -280,17 +272,22 @@ class App {
       let fileReader = new FileReader();
       fileReader.onload = e => {
         e.preventDefault();
-        let dataFile = fileReader.result;  
+        let dataFile = fileReader.result;
         songCover = dataFile;
         songCover = this._app.loadImage(songCover);
 
         let songFile = data.song_song;
         songSong = new p5.SoundFile(songFile);
-        
-        if(this._list[this._list.indexOf(this._currentList)].songItems.some(song => song.name === songName)){
+
+        if (this._list[this._list.indexOf(this._currentList)].songItems.some(song => song.name === songName)) {
 
         } else {
-          this._list[this._list.indexOf(this._currentList)].addSong({name:songName,artist:songArtist,cover:songCover,song:songSong})
+          this._list[this._list.indexOf(this._currentList)].addSong({
+            name: songName,
+            artist: songArtist,
+            cover: songCover,
+            song: songSong
+          })
         }
 
 
