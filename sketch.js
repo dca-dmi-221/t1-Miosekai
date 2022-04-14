@@ -284,7 +284,6 @@ function setup() {
 
 function preload() {
   pantalla1 = loadImage("./imagenes/fondo.png");
-
   soundFormats('mp3');
 
   SONGS_DATA.forEach(({ file, cover, name, artist }) => {

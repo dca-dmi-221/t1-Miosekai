@@ -13,12 +13,28 @@ class App {
 
     this._dragging = false;
 
+    this.prove= false;
+
     this.modal = document.getElementById("modal_list");
 
     this.modal.style = `position: absolute; width: 100%; height: 100%; left : ${this._list.length * 300 + 200}px; top: 50px; margin:0; color: white`
 
     this.modalSong = document.getElementById("modal_song");
     this.modalSong.style = `position: absolute; width: 100%; height: 100%;  top: 250px; margin:0; margin-left: 30px; color: white`
+
+    window.alert(" Hola, bienvenido al reproductor galáctico:" +
+  
+    "\n 1. Puedes escuchar todas las canciones de las listas determinadas" +
+    "\n 2. Crear tu propia lista en el cuadrado derecho y" +
+    "\n    sube tus propias canciones en formato MP3 y con imagen." +
+    "\n 3. Para subir una canción,ingresa los datos en el lado izquierdo" +
+    "\n    y recuerda seleccionar la lista en donde quieras guardarla. " +
+    "\n 4. También puedes manipular el volumen, cambiar o adelantar" +
+    "\n 5. Por último pausa la canción si quieres explorar otra lista " +
+    "\n    Esperamos que te guste el reproductor ツ ");
+
+    this.prove=true;
+
 
     this.slider = createSlider(0, 100, 10, 5);
     this.slider.position(710, 310);
@@ -86,7 +102,6 @@ class App {
   }
 
   click() {
-
 
     this._list.forEach((list, index) => {
       list.click(index);
@@ -288,6 +303,10 @@ class App {
             cover: songCover,
             song: songSong
           })
+
+          window.alert("Clickea sobre la playlist para recargar las canciones")
+          this.prove=true;
+
         }
 
 
